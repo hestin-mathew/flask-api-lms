@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Members</h2>
+<button id="add-member">Add Member</button>
+<table id="members-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Membership ID</th>
+            <th>Contact Info</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Members will be populated here -->
+    </tbody>
+</table>
+
+<!-- Add Member Modal -->
+<div id="add-member-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Add Member</h3>
+        <form id="add-member-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="membership_id">Membership ID:</label>
+            <input type="text" id="membership_id" name="membership_id" required>
+            <label for="contact_info">Contact Info:</label>
+            <input type="text" id="contact_info" name="contact_info">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<!-- Update Member Modal -->
+<div id="update-member-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Update Member</h3>
+        <form id="update-member-form">
+            <input type="hidden" id="update-member-id" name="id">
+            <label for="update-name">Name:</label>
+            <input type="text" id="update-name" name="name" required>
+            <label for="update-membership_id">Membership ID:</label>
+            <input type="text" id="update-membership_id" name="membership_id" required>
+            <label for="update-contact_info">Contact Info:</label>
+            <input type="text" id="update-contact_info" name="contact_info">
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
